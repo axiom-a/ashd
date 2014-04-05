@@ -1,0 +1,10 @@
+# Bubfile: ashd/tools
+#
+
+refer ashd/core;
+
+static-lib ashd : listiteratingsystem.d;
+
+test-exe listiteratingsystem_test : unittest/listiteratingsys_test.d;
+
+

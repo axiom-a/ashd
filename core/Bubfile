@@ -1,0 +1,15 @@
+# Bubfile: ashd/core
+#
+
+
+static-lib core : component.d entity.d entitylist.d node.d nodelist.d ifamily.d iengine.d
+                  system.d systemlist.d engine.d nodepool.d componentMatchingFamily.d;
+
+test-exe entity_test                  : unittest/entity_test.d;
+test-exe nodelist_test                : unittest/nodelist_test.d;
+test-exe engine_test                  : unittest/engine_test.d;
+test-exe system_test                  : unittest/system_test.d;
+test-exe engineFamilyIntegration_test : unittest/engineFamilyIntegration_test.d;
+test-exe componentMatchingFamily_test : unittest/componentMatchingFamily_test.d;
+
+

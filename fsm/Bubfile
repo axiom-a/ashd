@@ -1,0 +1,23 @@
+# Bubfile: ashd/fsm
+#
+
+refer ashd/core;
+
+static-lib entity : IComponentProvider.d componentInstanceProvider.d componentSingletonProvider.d
+                    componentTypeProvider.d dynamicComponentProvider.d entityState.d ISystemProvider.d
+                    entityStateMachine.d;
+static-lib sys    : systemInstanceProvider.d systemSingletonProvider.d dynamicSystemProvider.d
+                    engineState.d engineStateMachine.d;
+
+test-exe componentInstanceProvider_test : unittest/componentInstanceProvider_test.d;
+test-exe componentSingletonProvider_test: unittest/componentSingletonProvider_test.d;
+test-exe componentTypeProvider_test     : unittest/componentTypeProvider_test.d;
+test-exe dynamicComponentProvider_test  : unittest/dynamicComponentProvider_test.d;
+test-exe entityState_test               : unittest/entityState_test.d;
+test-exe entityStateMachine_test        : unittest/entityStateMachine_test.d;
+test-exe systemInstanceProvider_test    : unittest/systemInstanceProvider_test.d;
+test-exe systemSingletonProvider_test   : unittest/systemSingletonProvider_test.d;
+test-exe systemMethodProvider_test      : unittest/systemMethodProvider_test.d;
+test-exe engineStateMachine_test        : unittest/engineStateMachine_test.d;
+test-exe systemState_test               : unittest/systemState_test.d;
+

@@ -1,0 +1,5 @@
+# Bubfile: ashd
+#
+
+contain core tools fsm;
+
