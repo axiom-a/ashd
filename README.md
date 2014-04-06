@@ -8,8 +8,8 @@ Visit http://www.ashframework.org for more information.
 
 Builds with bub (bottom-up-build) (https://github.com/GrahamStJack/bottom-up-build), and DMD 2.065(b3).
 
-Once bub has been built/installed:
-bub-config --mode=release <build-dir>
-cd <build-dir>
-bub -j5
+Once bub has been built/installed:<br/>
+bub-config --mode=release <build-dir><br/>
+cd <build-dir><br/>
+bub -j5<br/>
 
