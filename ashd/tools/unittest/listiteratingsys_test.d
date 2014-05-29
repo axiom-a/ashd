@@ -9,7 +9,7 @@ import ashd.core.iengine                : IEngine;
 import ashd.core.entity                 : Entity;
 import ashd.core.node                   : Node;
 import ashd.core.nodelist               : NodeList;
-import ashd.tools.listiteratingsystem   : ListIteratingSystem;
+import ashd.tools.listIteratingSystem   : ListIteratingSystem;
 
 
 import std.datetime                     : dur, Duration, SysTime;

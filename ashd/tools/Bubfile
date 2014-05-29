@@ -3,7 +3,7 @@
 
 refer ashd/core;
 
-static-lib ashd : listiteratingsystem.d;
+static-lib ashd : listIteratingSystem.d;
 
 test-exe listiteratingsystem_test : unittest/listiteratingsys_test.d;
 
