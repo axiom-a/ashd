@@ -132,12 +132,12 @@ public class EntityStateMachineTests
     }
 }
 
-@cxmponent class MockComponent: Component
+class MockComponent: Component
 {
     public int value;
 }
 
-@cxmponent class MockComponent2: Component
+class MockComponent2: Component
 {
     public string value;
 }

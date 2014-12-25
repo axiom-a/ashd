@@ -217,12 +217,12 @@ class MockNode: Node
     int dummy;
 }
 
-@Cxmponent class Point: Component
+class Point: Component
 { 
     int x; int y; 
 }
 
-@Cxmponent class Class2: Component
+class Class2: Component
 {
     int dummy;
 }

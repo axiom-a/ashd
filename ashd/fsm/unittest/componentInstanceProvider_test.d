@@ -43,7 +43,7 @@ public class ComponentInstanceProviderTests
     }
 }
 
-@Cxmponent class MockComponent: Component
+class MockComponent: Component
 {
     public int value;
 }

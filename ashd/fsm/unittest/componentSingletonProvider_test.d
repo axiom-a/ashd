@@ -50,12 +50,12 @@ public class ComponentSingletonProviderTests
     }
 }
 
-@Cxmponent class MockComponent: Component
+class MockComponent: Component
 {
     public int value;
 }
 
-@Cxmponent class MockComponent2: Component
+class MockComponent2: Component
 {
     public string value;
 }
