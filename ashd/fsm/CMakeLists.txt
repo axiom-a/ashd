@@ -5,7 +5,7 @@ add_component( ashd-fsm IComponentProvider.d componentInstanceProvider.d
                         systemSingletonProvider.d dynamicSystemProvider.d
                         engineState.d engineStateMachine.d )
 
-set( LIBS ashd-fsm ashd-core nexus-trace )
+set( LIBS ashd-fsm ashd-core )
 
 add_unittest( entityState_test                  ${LIBS} )
 add_unittest( entityStateMachine_test           ${LIBS} )
