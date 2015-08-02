@@ -14,36 +14,28 @@ function( add_component _name _src)
     endif ( ${ptVERBOSITY} GREATER 5 )
 
     # Component library
-    add_library( ${_name} ${srcfiles} ) 
+    add_library( ${_name} ${srcfiles} )
 
     # Documentation
-    add_ddoc( ${_name}-doc TARGETS ${_name} OUTPUT_DIRECTORY ${DOC_OUTPUT_DIRECTORY} EXCLUDE_FROM_ALL ) 
-    add_dependencies( docs ${_name}-doc ) 
+    add_ddoc( ${_name}-doc TARGETS ${_name} OUTPUT_DIRECTORY ${DOC_OUTPUT_DIRECTORY} EXCLUDE_FROM_ALL )
+    add_dependencies( docs ${_name}-doc )
     #MACROS "${DOC_OUTPUT_DIRECTORY}/candydoc/candy" )
 
     # Utilities
 
 endfunction()
 
-
 # Unit Tests
 function( add_unittest _target )
 
-    #CMAKE_PARSE_ARGUMENTS(<prefix> <options> <one_value_keywords> <multi_value_keywords> args...)
-    #cmake_parse_arguments(ARG "" "" "LIBS" ${ARGN})
-
-    #if ( NOT ARG_LIBS )
-    #    set(ARG_LIBS "" )
-    #endif()
-
-
-    add_executable( ${_target} "unittest/${_target}.d" )
+    add_executable( ${_target} "${_target}.d" )
     set_target_properties( ${_target} PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/unittest" )
     target_link_libraries( ${_target} ${ARGN} )
     add_test( NAME ${_target} COMMAND ${_target} )
     add_dependencies( check ${_target} )
 
 endfunction()
+
 
 # Private executable
 function( add_privexe _target )
