@@ -1,7 +1,10 @@
 /**
- * Unit tests for engineState.d
+ * Unit tests for systemState.d
  *
  */
+module systemState_test;
+
+
 import ashd.core.system         : System;
 import ashd.fsm.engineState     : EngineState;
 import ashd.fsm.ISystemProvider : ISystemProvider;
@@ -27,7 +30,7 @@ int main()
 public class SystemStateTests
 {
     private EngineState mState;
-   
+
     this()
     {
         mState = new EngineState();
@@ -43,7 +46,7 @@ public class SystemStateTests
         assert( providers[MockSystem.classinfo].getSystem!MockSystem() is system1 );
     }
 
-    public void addSingletonCreatesSingletonProvider() 
+    public void addSingletonCreatesSingletonProvider()
     {
         mState.addSingleton( typeid(MockSystem) );
         ISystemProvider[ClassInfo] providers = mState.providers;
@@ -54,7 +57,7 @@ public class SystemStateTests
     public void addMethodCreatesMethodProvider()
     {
         MockSystem system = new MockSystem();
-        MockSystem methodProvider() { return new MockSystem(); } 
+        MockSystem methodProvider() { return new MockSystem(); }
 
         mState.addMethod( &methodProvider );
         ISystemProvider[ClassInfo] providers = mState.providers;

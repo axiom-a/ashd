@@ -2,6 +2,8 @@
  * Unit tests for entityState.d
  *
  */
+module entityState_test;
+
 import ashd.fsm.componentTypeProvider: ComponentTypeProvider;
 import ashd.fsm.entityState          : EntityState;
 import ashd.fsm.IComponentProvider   : IComponentProvider;
@@ -30,7 +32,6 @@ public class EntityStateTests
         mState = new EntityState( );
     }
 
-    
     public void addWithNoQualifierCreatesTypeProvider()
     {
         mState.add( typeid(MockComponent) );
@@ -63,7 +64,7 @@ public class EntityStateTests
 
     public void addWithMethodQualifierCreatesDynamicProvider()
     {
-        MockComponent dynamicProvider() { return new MockComponent(); } 
+        MockComponent dynamicProvider() { return new MockComponent(); }
         mState.add( typeid(MockComponent) ).withMethod!MockComponent( &dynamicProvider );
         IComponentProvider provider = mState.get( typeid(MockComponent ) );
         assert( (provider.getComponent!MockComponent()).classinfo == MockComponent.classinfo );

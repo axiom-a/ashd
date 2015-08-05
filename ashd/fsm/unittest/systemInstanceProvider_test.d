@@ -2,6 +2,8 @@
  * Unit tests for systemInstanceProvider.d
  *
  */
+module systemInstanceProvider_test;
+
 import ashd.core.system                : System;
 import ashd.fsm.systemInstanceProvider : SystemInstanceProvider;
 

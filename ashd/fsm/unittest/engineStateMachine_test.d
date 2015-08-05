@@ -1,6 +1,9 @@
 /**
  * Unit tests for engineStateMachine.d
  */
+module engineStateMachine_test;
+
+
 import ashd.core.engine           : Engine;
 import ashd.core.iengine          : IEngine;
 import ashd.core.system           : System;
@@ -15,7 +18,7 @@ int main()
     (new EngineStateMachineTests).enterSecondStateRemovesFirstStatesSystems();
     (new EngineStateMachineTests).enterSecondStateDoesNotRemoveOverlappingSystems();
     (new EngineStateMachineTests).enterSecondStateRemovesDifferentSystemsOfSameType();
-    
+
     return 0;
 }
 

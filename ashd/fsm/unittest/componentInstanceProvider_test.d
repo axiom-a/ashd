@@ -2,6 +2,8 @@
  * Unit tests for componentInstanceProvider.d
  *
  */
+module componentInstanceProvider_test;
+
 import ashd.core.component                : Component;
 import ashd.fsm.componentInstanceProvider : ComponentInstanceProvider;
 

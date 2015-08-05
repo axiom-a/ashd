@@ -2,6 +2,8 @@
  * Unit tests for system.d and IFamily
  *
  */
+module engineFamilyIntegration_test;
+
 import ashd.core.component              : Component;
 import ashd.core.componentMatchingFamily: ComponentMatchingFamily;
 import ashd.core.engine                 : Engine, IFamily, Node, NodeList;

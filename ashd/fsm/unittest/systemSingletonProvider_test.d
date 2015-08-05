@@ -2,6 +2,8 @@
  * Unit tests for systemSingletonProvider.d
  *
  */
+module systemSingletonProvider_test;
+
 import ashd.core.system                : System;
 import ashd.fsm.systemSingletonProvider: SystemSingletonProvider;
 

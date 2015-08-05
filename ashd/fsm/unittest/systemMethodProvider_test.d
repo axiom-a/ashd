@@ -1,7 +1,9 @@
 /**
- * Unit tests for dynamicSystemProvider.d
+ * Unit tests for systemMethodProvider.d
  *
  */
+module systemMethodProvider_test;
+
 import ashd.core.system              : System;
 import ashd.fsm.dynamicSystemProvider: DynamicSystemProvider;
 

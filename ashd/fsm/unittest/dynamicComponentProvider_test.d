@@ -2,6 +2,8 @@
  * Unit tests for dynamicComponentProvider.d
  *
  */
+module dynamicComponentProvider_test;
+
 import ashd.core.component               : Component;
 import ashd.fsm.dynamicComponentProvider : DynamicComponentProvider;
 

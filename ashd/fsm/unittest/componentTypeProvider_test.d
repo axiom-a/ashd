@@ -2,6 +2,8 @@
  * Unit tests for componentTypeProvider.d
  *
  */
+module componentTypeProvider_test;
+
 import ashd.core.component            : Component;
 import ashd.fsm.componentTypeProvider : ComponentTypeProvider;
 

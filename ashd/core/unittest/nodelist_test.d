@@ -2,10 +2,10 @@
  * Unit tests for nodelist.d
  *
  */
+module nodelist_test;
+
 import ashd.core.node     : Node;
 import ashd.core.nodelist : NodeList, SortFuncType;
-
-
 
 int main()
 {

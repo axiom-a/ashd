@@ -2,6 +2,8 @@
  * Unit tests for system.d
  *
  */
+module system_test;
+
 import ashd.core.engine   : Engine;
 import ashd.core.iengine  : IEngine;
 import ashd.core.system   : System;

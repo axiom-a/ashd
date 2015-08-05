@@ -2,16 +2,14 @@
  * Unit tests for entityState.d
  *
  */
+module entityStateMachine_test;
+
 import ashd.core.component           : Component;
 import ashd.core.entity              : Entity;
 import ashd.fsm.componentTypeProvider: ComponentTypeProvider;
 import ashd.fsm.entityState          : EntityState;
 import ashd.fsm.entityStateMachine   : EntityStateMachine;
 import ashd.fsm.IComponentProvider   : IComponentProvider;
-
-
-
-
 
 
 int main()
