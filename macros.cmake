@@ -28,6 +28,7 @@ endfunction()
 # Unit Tests
 function( add_unittest _target )
 
+    include_directories( ${CMAKE_CURRENT_SOURCE_DIR} )
     add_executable( ${_target} "${_target}.d" )
     set_target_properties( ${_target} PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/unittest" )
     target_link_libraries( ${_target} ${ARGN} )
