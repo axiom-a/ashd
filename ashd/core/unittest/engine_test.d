@@ -245,8 +245,8 @@ class EngineTests
 }
 
 class Point: Component
-{ 
-    int x; int y; 
+{
+    int x; int y;
 }
 
 class MockNode: Node
@@ -264,14 +264,14 @@ class MockFamily: IFamily
 {
     private
     {
-        static MockFamily mInstances[];
+        static MockFamily[] mInstances;
         int mNewEntityCalls;
         int mRemoveEntityCalls;
         int mComponentAddedCalls;
         int mComponentRemovedCalls;
         int mCleanUpCalls;
     }
-    
+
     public this()
     {
         mInstances ~= this;

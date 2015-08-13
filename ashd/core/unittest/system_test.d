@@ -59,7 +59,7 @@ class SystemTests
         MockSystem system2 = new MockSystem( this );
         mEngine.addSystem( system2, 1 );
         assert( mEngine.systems.length == 2 );
-        bool tmp[System];
+        bool[System] tmp;
         foreach ( sys; mEngine.systems )
             tmp[sys] = true;
         assert( system1 in tmp );

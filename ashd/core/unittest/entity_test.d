@@ -110,7 +110,7 @@ class EntityTests
 
         auto all = testEntity.getAll();
         assert( all.length == 2 );
-        bool tmp[Object];
+        bool[Object] tmp;
         foreach ( cpt; all )
             tmp[cpt] = true;
         assert( component1 in tmp );
