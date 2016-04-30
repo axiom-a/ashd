@@ -2,6 +2,8 @@
  * Unit tests from componentMatchingFamily.d
  *
  */
+module componentMatchingFamily_test;
+
 import ashd.core.componentMatchingFamily: ComponentMatchingFamily;
 import ashd.core.component              : Component;
 import ashd.core.entity                 : Entity;

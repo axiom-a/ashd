@@ -2,6 +2,8 @@
  * Unit tests for componentSingletonProvider.d
  *
  */
+module componentSingletonProvider_test;
+
 import ashd.core.component                : Component;
 import ashd.fsm.componentSingletonProvider: ComponentSingletonProvider;
 
@@ -14,11 +16,6 @@ int main()
 
     return 0;
 }
-
-
-
-
-
 
 
 public class ComponentSingletonProviderTests

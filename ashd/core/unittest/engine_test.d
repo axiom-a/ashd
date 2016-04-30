@@ -2,6 +2,8 @@
  * Unit tests for engine.d
  *
  */
+module engine_test;
+
 import ashd.core.component : Component;
 import ashd.core.entity    : Entity;
 import ashd.core.engine    : Engine;
@@ -20,17 +22,17 @@ int main()
     (new EngineTests).removeEntityChecksWithAllFamilies();
     (new EngineTests).removeEntityChecksWithAllFamilies2();
     (new EngineTests).removeAllEntitiesChecksWithAllFamilies();
-    
+
     (new EngineTests).componentAddedChecksWithAllFamilies();
     (new EngineTests).componentRemovedChecksWithAllFamilies();
     (new EngineTests).getNodeListCreatesFamily();
-      
+
     (new EngineTests).getNodeListChecksAllEntities();
     (new EngineTests).entityCanBeObtainedByName();
     (new EngineTests).getEntityByInvalidNameReturnsNull();
     (new EngineTests).entityCanBeObtainedByNameAfterRenaming();
     (new EngineTests).entityCannotBeObtainedByOldNameAfterRenaming();
-    
+
     return 0;
 }
 
@@ -243,8 +245,8 @@ class EngineTests
 }
 
 class Point: Component
-{ 
-    int x; int y; 
+{
+    int x; int y;
 }
 
 class MockNode: Node
@@ -262,14 +264,14 @@ class MockFamily: IFamily
 {
     private
     {
-        static MockFamily mInstances[];
+        static MockFamily[] mInstances;
         int mNewEntityCalls;
         int mRemoveEntityCalls;
         int mComponentAddedCalls;
         int mComponentRemovedCalls;
         int mCleanUpCalls;
     }
-    
+
     public this()
     {
         mInstances ~= this;

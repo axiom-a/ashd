@@ -2,6 +2,8 @@
  * Unit tests for Entity.d
  *
  */
+module entity_test;
+
 import ashd.core.component: Component;
 import ashd.core.entity   : Entity;
 
@@ -39,7 +41,7 @@ class EntityTests
         Entity testEntity = new Entity();
         MockComponent component = new MockComponent;
         auto e = testEntity.add( component );
-        assert( e is testEntity, "Test FAIL: addReturnsReferenceToEntity()" ); 
+        assert( e is testEntity, "Test FAIL: addReturnsReferenceToEntity()" );
     }
 
     void canStoreAndRetrieveComponent()
@@ -49,7 +51,7 @@ class EntityTests
         auto e = testEntity.add( component );
         assert( testEntity.get!MockComponent() is component, "Test FAIL: canStoreAndRetrieveComponent()" );
     }
-   
+
     void canStoreAndRetrieveMultipleComponents()
     {
         Entity testEntity = new Entity();
@@ -108,7 +110,7 @@ class EntityTests
 
         auto all = testEntity.getAll();
         assert( all.length == 2 );
-        bool tmp[Object];
+        bool[Object] tmp;
         foreach ( cpt; all )
             tmp[cpt] = true;
         assert( component1 in tmp );

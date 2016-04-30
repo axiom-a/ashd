@@ -2,6 +2,8 @@
  * Unit tests for listiteratingsystem.d
  *
  */
+module listiteratingsys_test;
+
 import ashd.core.component              : Component;
 import ashd.core.componentMatchingFamily: ComponentMatchingFamily;
 import ashd.core.engine                 : Engine;
@@ -48,17 +50,17 @@ class ListIteratingSystemTests
         Point component3 = new Point();
         entity3.add( component3 );
         engine.addEntity( entity3 );
-        
+
         ListIteratingSystem!MockNode system1 = new ListIteratingSystem!MockNode( &updateNode );
         engine.addSystem!(ListIteratingSystem!MockNode)( system1, 1 );
         mEntities = [entity1, entity2, entity3];
         mCallCount = 0;
         engine.update( dur!"msecs"(100) );
-        
+
         assert( mCallCount == 3 );
 
     }
-        
+
     private void updateNode( Node node_a, Duration time_a )
     {
         assert( node_a.entity is mEntities[mCallCount] );

@@ -6,9 +6,8 @@ Original AS3 version - https://github.com/richardlord/Ash
 Visit http://www.ashframework.org for more information.
 
 Builds with:
- - cmake 
- - bub ([bottom-up-build](https://github.com/GrahamStJack/bottom-up-build))
- - [DMD 2.066.1](https://github.com/D-Programming-Language/dmd).
+ - cmake (modified for use with D) ([cmake](https://github.com/trentforkert/cmake))
+ - [DMD 2.071.0](http://dlang.org)
 
 Building with cmake:
 ```shell
@@ -19,12 +18,5 @@ cmake <ashd-source-dir>
 make -j3
 ````
 
-Building with bub: 
-Once bub has been built/installed:
-```shell
-bub-config --mode=release <build-dir>
-cd <build-dir>
-bub -j5
-````
 
 Will also build with [dub](https://github.com/rejectedsoftware/dub). Has only been tested on linux.

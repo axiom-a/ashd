@@ -1,17 +1,17 @@
 /**
  * A useful class for systems which simply iterate over a set of nodes, performing the same action 
- * on each node. This class removes the need for a lot of boilerplate code in such systems. 
- * Extend this class and pass the node type and a node update method into the constructor. 
+ * on each node. This class removes the need for a lot of boilerplate code in such systems.
+ * Extend this class and pass the node type and a node update method into the constructor.
  * The node update method will be called once per node on the update cycle
  * with the node instance and the frame time as parameters. e.g.
- * 
+ *
  *   public class MySystem: ListIteratingSystem
  *   {
  *     override public void MySystem()
  *     {
  *       super( MyNode, updateNode );
  *     }
- *     
+ *
  *     override private void updateNode( MyNode node, Duration time )
  *     {
  *       // process the node here
@@ -19,9 +19,7 @@
  *   }
  * }
  */
-
-
-module ashd.tools.ListIteratingSystem;
+module ashd.tools.listIteratingSystem;
 
 
 import ashd.core.system   : System;
@@ -43,9 +41,9 @@ public class ListIteratingSystem(N): System
         void delegate( Node ) mNodeAddedFunction;
         void delegate( Node ) mNodeRemovedFunction;
     }
-   
-    public this( void delegate( Node, Duration ) nodeUpdateFunction_a, 
-                 void delegate( Node ) nodeAddedFunction_a = null, 
+
+    public this( void delegate( Node, Duration ) nodeUpdateFunction_a,
+                 void delegate( Node ) nodeAddedFunction_a = null,
                  void delegate( Node ) nodeRemovedFunction_a = null )
     {
         this.mNodeUpdateFunction = nodeUpdateFunction_a;
