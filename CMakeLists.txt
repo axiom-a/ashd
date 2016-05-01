@@ -1,20 +1,24 @@
-# Tell cmake our project only concerns the D language.
 cmake_minimum_required(VERSION 2.8.1)
 
 # Ensure the boilerplate code is in the module path....
 set( CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}" )
 
+# Default compiler is ldc2
+set( CMAKE_D_COMPILER "ldc2" )
+set( GLOBAL_D_DEFS "-w -wi -O2 -dw -m64" )
+if ( ${USE_DMD} )
+    set( CMAKE_D_COMPILER "dmd" )
+    set( GLOBAL_D_DEFS "-w" )
+endif ( ${USE_DMD} )
+
 # Ensure all required functions are available...
 include( UseD )
 include( macros )
 
-#set( CMAKE_D_COMPILER "gdc" )
-#set( CMAKE_D_COMPILER "dmd" )
 
-# Explicitly indicate we're using the D language in the project declaration.  
+# Explicitly indicate we're using the D language in the project declaration.
 # Listing other languages is fine.
 PROJECT ( ashd D )
-SET( GLOBAL_DMD_DEFS "-w" )
 SET( GLOBAL_GCC_DEFS "-Wall -pedantic" )
 
 # Don't use ADD_DEFINITIONS() with a mixed C + D project
@@ -24,7 +28,7 @@ SET( GLOBAL_GCC_DEFS "-Wall -pedantic" )
 # to use the D linker in mixed linking cases.
 # Append our own definitions to the defaults.
 SET( CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${GLOBAL_GCC_DEFS}" )
-SET( CMAKE_D_FLAGS "${CMAKE_D_FLAGS} ${GLOBAL_DMD_DEFS}" )
+SET( CMAKE_D_FLAGS "${CMAKE_D_FLAGS} ${GLOBAL_D_DEFS}" )
 
 file( MAKE_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/dist/bin )
 file( MAKE_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/lib )

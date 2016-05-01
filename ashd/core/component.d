@@ -6,7 +6,7 @@
 module ashd.core.component;
 
 
-/// 
+// Baseclass - empty for now
 abstract class Component
 {
 }
