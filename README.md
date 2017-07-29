@@ -6,17 +6,16 @@ Original AS3 version - https://github.com/richardlord/Ash
 Visit http://www.ashframework.org for more information.
 
 Builds with:
- - cmake (modified for use with D) ([cmake](https://github.com/trentforkert/cmake))
- - [DMD 2.071.0](http://dlang.org)
+ - cmake (using cmake-d [cmake-d](https://github.com/dcarp/cmake-d))
+ - [LDC 1.3.0](http://dlang.org)
+ - [DMD 2.075.0](http://dlang.org)
 
 Building with cmake:
 ```shell
-cd <location where build dir will sit>
 mkdir <build-dir>
 cd <build-dir>
 cmake <ashd-source-dir>
 make -j3
+make test
 ````
 
-
-Will also build with [dub](https://github.com/rejectedsoftware/dub). Has only been tested on linux.

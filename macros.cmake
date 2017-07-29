@@ -1,7 +1,10 @@
 # Still very beta quality
+set(CMAKE_D_BUILD_DOCS True CACHE BOOLEAN FALSE FORCE)
+
+include ( UseDDoc )
 
 # Custom 'docs' target to make documentation...
-add_custom_target( docs )
+#add_custom_target( docs )
 
 # add a component
 function( add_component _name _src)
@@ -17,8 +20,8 @@ function( add_component _name _src)
     add_library( ${_name} ${srcfiles} )
 
     # Documentation
-    add_ddoc( ${_name}-doc TARGETS ${_name} OUTPUT_DIRECTORY ${DOC_OUTPUT_DIRECTORY} EXCLUDE_FROM_ALL )
-    add_dependencies( docs ${_name}-doc )
+    #   add_ddoc( ${_name}-doc TARGETS ${_name} OUTPUT_DIRECTORY ${DOC_OUTPUT_DIRECTORY} EXCLUDE_FROM_ALL )
+    #   add_dependencies( docs ${_name}-doc )
     #MACROS "${DOC_OUTPUT_DIRECTORY}/candydoc/candy" )
 
     # Utilities

@@ -3,16 +3,17 @@ cmake_minimum_required(VERSION 2.8.1)
 # Ensure the boilerplate code is in the module path....
 set( CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}" )
 
+#set (USE_DMD "yes")
+
 # Default compiler is ldc2
 set( CMAKE_D_COMPILER "ldc2" )
-set( GLOBAL_D_DEFS "-w -wi -O2 -dw -m64" )
+set( GLOBAL_D_DEFS "-w -wi -O2 -dw -m64 -D -Dd=documentation" )
 if ( ${USE_DMD} )
     set( CMAKE_D_COMPILER "dmd" )
-    set( GLOBAL_D_DEFS "-w" )
+    set( GLOBAL_D_DEFS "-w -D -Dddocumentation" )
 endif ( ${USE_DMD} )
 
 # Ensure all required functions are available...
-include( UseD )
 include( macros )
 
 
